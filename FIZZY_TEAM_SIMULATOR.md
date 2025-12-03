@@ -287,7 +287,7 @@ persona:
   working_hours: "24/7"       # Or "9-5", "night-owl", "random"
   chaos_factor: 0.7           # 0.0 = predictable, 1.0 = random
   interaction_style: eager    # passive, normal, eager, aggressive
-  entropy_awareness: low      # Likelihood to prevent auto-postponement
+  entropy_prevention: 0.2     # Probability (0.0-1.0) of taking action to prevent auto-postponement
 ```
 
 ---

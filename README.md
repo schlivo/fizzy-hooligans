@@ -17,7 +17,7 @@ See [FIZZY_TEAM_SIMULATOR.md](FIZZY_TEAM_SIMULATOR.md) for:
 
 ## Featured Personas
 
-| Persona | Role | Chaos Factor |
+| Persona | Role | Key Behavior |
 |---------|------|--------------|
 | 🎪 The Overcommitter | Senior Dev | Assigns self to everything |
 | 🐙 The Scope Creeper | PM | Every card needs "one more thing" |

@@ -1,0 +1,35 @@
+{
+  "name": "fizzy-hooligans",
+  "version": "1.0.0",
+  "description": "Fizzy Team Simulator - Agentic Personas Edition. A stress-testing framework for AI systems using chaotic Kanban board simulations.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/cli.ts",
+    "demo": "ts-node src/cli.ts demo",
+    "quick": "ts-node src/cli.ts quick",
+    "full": "ts-node src/cli.ts full",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "ai",
+    "testing",
+    "simulation",
+    "kanban",
+    "agents",
+    "stress-test",
+    "fizzy"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^24.10.1",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

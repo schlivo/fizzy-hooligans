@@ -78,7 +78,19 @@ export function randomInt(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+/**
+ * Fisher-Yates shuffle algorithm for uniform random sampling
+ */
 export function randomSample<T>(arr: T[], count: number): T[] {
-  const shuffled = [...arr].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, Math.min(count, arr.length));
+  const result = [...arr];
+  const n = result.length;
+  const sampleSize = Math.min(count, n);
+  
+  // Fisher-Yates shuffle (partial, only shuffle as many as we need)
+  for (let i = 0; i < sampleSize; i++) {
+    const j = i + Math.floor(Math.random() * (n - i));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  
+  return result.slice(0, sampleSize);
 }

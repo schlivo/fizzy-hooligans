@@ -5,7 +5,7 @@
  */
 
 import { Board, PersonaAction } from '../models';
-import { BaseAgent, AgentConfig, randomInt, randomSample } from './baseAgent';
+import { BaseAgent, AgentConfig, randomInt, randomSample, randomChoice } from './baseAgent';
 import { moveCard, addComment } from '../tools';
 
 const FIRE_KEYWORDS = [
@@ -154,7 +154,7 @@ export class BurnedOutOpsChris extends BaseAgent {
       for (const card of cardsToRageClose) {
         moveCard(board, card.id, 'Done', this.id);
         
-        const comment = RAGE_CLOSE_COMMENTS[randomInt(0, RAGE_CLOSE_COMMENTS.length - 1)];
+        const comment = randomChoice(RAGE_CLOSE_COMMENTS);
         addComment(board, card.id, this.id, this.name, comment);
         
         this.logAction('rage_close', { cardId: card.id }, card.id);

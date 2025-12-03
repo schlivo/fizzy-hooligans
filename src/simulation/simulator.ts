@@ -113,11 +113,14 @@ export class FizzyTeamSimulator {
     
     let commentsAdded = 0;
     let totalBlockers = 0;
+    let cardsReassigned = 0;
     
     for (const card of this.board.cards.values()) {
       cardsByStatus[card.status]++;
       commentsAdded += card.comments.length;
       totalBlockers += card.blockedBy.length;
+      // Count assignment changes from history
+      cardsReassigned += card.history.filter(h => h.action === 'assign').length;
     }
     
     const aiMetrics = this.aiJanitor.getMetrics();
@@ -127,7 +130,7 @@ export class FizzyTeamSimulator {
       totalCards: this.board.cards.size,
       cardsByStatus,
       commentsAdded,
-      cardsReassigned: 0, // Calculated from actions
+      cardsReassigned,
       blockerLinksCreated: totalBlockers,
       hallucinations: aiMetrics.hallucinationCount,
       gracefulFallbacks: aiMetrics.gracefulFallbackCount,
